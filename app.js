@@ -10,3 +10,10 @@ function toggleNav() {
 
 hamburgerIcon.addEventListener('click', toggleNav);
 closeIcon.addEventListener('click', toggleNav);
+
+document.querySelector('.temp').addEventListener('click', e => {
+  e.preventDefault();
+  console.log('here');
+
+  toggleNav();
+});

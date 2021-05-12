@@ -1,6 +1,7 @@
 :root {
   --background: #2f2f33;
   --background-dark: #1c1c1f;
+  --background-dark-2: #121214;
   --main-text: #ececec;
 }
 
@@ -38,11 +39,11 @@ header {
 
 nav {
   z-index: 1000;
-  position: absolute;
+  position: fixed;
   top: 0;
-  bottom: 0;
-  right: 0;
   left: 0;
+  height: 100vh;
+  width: 100%;
   background-color: var(--background);
   display: flex;
   justify-content: center;
@@ -86,8 +87,42 @@ nav {
   cursor: pointer;
 }
 
-section {
-  font-size: 50px;
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.landing-header {
+  font-size: 3rem;
+  margin-top: 6rem;
+}
+
+.bottom {
+  width: 100%;
+  background: var(--background-dark-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.content {
+  padding-top: 2rem;
+  max-width: 60%;
+  text-align: center;
+}
+
+.waves {
+  fill: var(--background-dark-2);
+  width: 100%;
+}
+
+.greeting {
+  margin-top: 1rem;
+  font-size: 1.2rem;
 }
 
 @media screen and (min-width: 770px) {
