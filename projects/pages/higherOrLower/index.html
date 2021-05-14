@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="setup">
+        <h3>Please select what the max will be for the game.</h3>
+        <input type="number" step="1" id='maxValue'>
+        <button id='playButton'>Play</button>
+    </div>
+
+    <div id="main">
+        <h2>Will the next number be Higher or Lower than:</h2>
+        <h1 id='number'></h1>
+        <button id="higherButton">Higher</button>
+        <h2>or</h2>
+        <button id="lowerButton">Lower</button>
+        <p id='score'>Score: </p>
+        <h4 id='restart'>(RESTART)</h4>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

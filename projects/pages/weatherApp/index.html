@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Weather</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="img/icon.ico">
+    </head>
+    <body>
+        <div id="container">
+            <div id="top-section">
+                <h1 id="location"></h1>
+            </div>
+            <div id="bottom-section">
+                <div id="temp-section">
+                    <h2 id="temp"></h2><span id='CF'></span>
+                </div>
+                <p id="description"></p>
+                <span id="img"><img src="img/refresh-icon.png" alt="refresh" onclick="location.reload();"></span>
+            </div>
+        </div>
+
+        <script src="weatherApp.js" async defer></script>
+    </body>
+</html>

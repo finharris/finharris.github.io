@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Character Changer</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='script.js'></script>
+    <link rel="icon" type="icon" href="bubble.ico">
+</head>
+
+<body>
+    <h1 class="mainHeading">Character Changer</h1>
+    <input type="button" onclick="clearAll()" value="Clear All" id="clearAllBut">
+
+    <form method="GET" action="script.js" id="form">
+        Text:<br><textarea id="text" rows=4></textarea><br>
+        Character to replace:<br><input type=" text" name="replaceWith" id="replaceWith"><br>
+        Replace it with:<br><input type=" text" name="replacedWord" id="replacedWord"><br><br>
+        <input type="button" onclick="changeWords()" value="Submit">
+    </form>
+
+    <div id="output">
+
+    </div>
+</body>
+
+</html>
