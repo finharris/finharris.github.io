@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "type": "App"
+  },
+  "project": {
+    "shadows": true,
+    "shadowType": 1,
+    "vr": false,
+    "physicallyCorrectLights": false,
+    "toneMapping": 0,
+    "toneMappingExposure": 1
+  },
+  "camera": {
+    "metadata": {
+      "version": 4.5,
+      "type": "Object",
+      "generator": "Object3D.toJSON"
+    },
+    "object": {
+      "uuid": "F6A078FC-DEF8-488B-ACB9-F881F96B51F7",
+      "type": "PerspectiveCamera",
+      "name": "Camera",
+      "layers": 1,
+      "matrix": [
+        0.955336, 0, 0.29552, 0, 0.120136, 0.91364, -0.388368, 0, -0.269999,
+        0.406525, 0.872833, 0, -5.442786, 11.031879, 25.952937, 1
+      ],
+      "fov": 50,
+      "zoom": 1,
+      "near": 0.01,
+      "far": 1000,
+      "focus": 10,
+      "aspect": 1.790055,
+      "filmGauge": 35,
+      "filmOffset": 0
+    }
+  },
+  "scene": {
+    "metadata": {
+      "version": 4.5,
+      "type": "Object",
+      "generator": "Object3D.toJSON"
+    },
+    "geometries": [
+      {
+        "uuid": "78630EB1-698E-45D0-9069-26A949F5C6DC",
+        "type": "BoxGeometry",
+        "width": 1,
+        "height": 1,
+        "depth": 1,
+        "widthSegments": 1,
+        "heightSegments": 1,
+        "depthSegments": 1
+      },
+      {
+        "uuid": "958A020E-89D2-43C4-B0F9-1572D146FADF",
+        "type": "TorusGeometry",
+        "radius": 1,
+        "tube": 0.4,
+        "radialSegments": 33,
+        "tubularSegments": 33,
+        "arc": 6.283185
+      }
+    ],
+    "materials": [
+      {
+        "uuid": "00234A9F-ACC5-4638-A7CC-A6940F2D9824",
+        "type": "MeshBasicMaterial",
+        "color": 5439412,
+        "reflectivity": 1,
+        "refractionRatio": 0.98,
+        "depthFunc": 3,
+        "depthTest": true,
+        "depthWrite": true,
+        "colorWrite": true,
+        "stencilWrite": false,
+        "stencilWriteMask": 255,
+        "stencilFunc": 519,
+        "stencilRef": 0,
+        "stencilFuncMask": 255,
+        "stencilFail": 7680,
+        "stencilZFail": 7680,
+        "stencilZPass": 7680
+      },
+      {
+        "uuid": "260BD23E-F2B3-4918-A21E-A057AB06601A",
+        "type": "MeshBasicMaterial",
+        "color": 16770667,
+        "reflectivity": 1,
+        "refractionRatio": 0.98,
+        "depthFunc": 3,
+        "depthTest": true,
+        "depthWrite": true,
+        "colorWrite": true,
+        "stencilWrite": false,
+        "stencilWriteMask": 255,
+        "stencilFunc": 519,
+        "stencilRef": 0,
+        "stencilFuncMask": 255,
+        "stencilFail": 7680,
+        "stencilZFail": 7680,
+        "stencilZPass": 7680,
+        "wireframe": true
+      }
+    ],
+    "object": {
+      "uuid": "126E177F-DCB1-4F66-8406-255B00D8A03D",
+      "type": "Scene",
+      "name": "Scene",
+      "layers": 1,
+      "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+      "children": [
+        {
+          "uuid": "B7BF26B6-1261-4421-B21B-B96E7DEA5171",
+          "type": "Mesh",
+          "name": "Box",
+          "layers": 1,
+          "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 4.627922, 0, 1],
+          "geometry": "78630EB1-698E-45D0-9069-26A949F5C6DC",
+          "material": "00234A9F-ACC5-4638-A7CC-A6940F2D9824"
+        },
+        {
+          "uuid": "343E7A12-F61B-45DC-9429-B7643B51EE25",
+          "type": "Group",
+          "name": "Group",
+          "layers": 1,
+          "matrix": [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+          "children": [
+            {
+              "uuid": "D54D7864-FFFC-46FD-B844-5FC587C8ED7C",
+              "type": "PerspectiveCamera",
+              "name": "PerspectiveCamera",
+              "castShadow": true,
+              "receiveShadow": true,
+              "layers": 1,
+              "matrix": [
+                1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 5.70487, 11.43127, 1
+              ],
+              "fov": 75,
+              "zoom": 1,
+              "near": 0.1,
+              "far": 2000,
+              "focus": 10,
+              "aspect": 1.790055,
+              "filmGauge": 35,
+              "filmOffset": 0
+            }
+          ]
+        },
+        {
+          "uuid": "E0A89E7A-4FCD-411F-A9D3-2EF0F0BDA117",
+          "type": "Mesh",
+          "name": "Torus",
+          "layers": 1,
+          "matrix": [3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 3, 0, 0, 4.628, 0, 1],
+          "geometry": "958A020E-89D2-43C4-B0F9-1572D146FADF",
+          "material": "260BD23E-F2B3-4918-A21E-A057AB06601A"
+        }
+      ],
+      "background": 16759951
+    }
+  },
+  "scripts": {
+    "D54D7864-FFFC-46FD-B844-5FC587C8ED7C": [
+      {
+        "name": "orbit",
+        "source": "player.setCamera( this );\n\nfunction getScrollPercent() {\n    var h = document.documentElement, \n        b = document.body,\n        st = 'scrollTop',\n        sh = 'scrollHeight';\n    return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;\n}\n\n\n\nfunction update( event ) {\n\tvar lastPerc;\n\twindow.addEventListener('scroll', () => {\n\t\tlet perc = getScrollPercent();\n\t\t\n\t\tthis.position.z = 11 + perc/2;\n\t\t\n\t\t\n\t});\n\t\n\t//this.position.z += 0.01;\n}"
+      }
+    ],
+    "343E7A12-F61B-45DC-9429-B7643B51EE25": [
+      {
+        "name": "sdada",
+        "source": "function update( event ) {\n\n\tvar time = event.time * 0.001;\n\n\tthis.position.x = Math.sin( time ) * 4;\n\tthis.position.z = Math.cos( time ) * 4;\n\tthis.lookAt( scene.position );\n\n}"
+      }
+    ],
+    "E0A89E7A-4FCD-411F-A9D3-2EF0F0BDA117": [
+      {
+        "name": "rotate",
+        "source": "function update( event ) {\n\tthis.rotation.x += 0.01;\n\tthis.rotation.y += 0.005;\n\tthis.rotation.z += 0.01;\n\n}"
+      }
+    ]
+  }
+}

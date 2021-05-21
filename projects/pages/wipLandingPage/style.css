@@ -1,0 +1,71 @@
+/* UNIVERSAL STYLES */
+
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0px;
+  font-size: 10px;
+  color: #fff;
+}
+
+body {
+  overflow-x: hidden;
+  height: 200vh;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  z-index: -100;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+p,
+p > *,
+strong,
+i {
+  font-size: 2rem;
+}
+
+.no-under,
+.no-under > * {
+  text-decoration: none;
+}
+
+.box {
+  box-shadow: 3px 3px 20px 6px rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem;
+  border-radius: 1rem;
+}
+
+section,
+.box {
+  max-width: 60%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15rem;
+}
+
+/* SPECIFIC STYLES */
+
+.name-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  margin-top: 7rem;
+}
+.name {
+  font-size: 7rem;
+  font-weight: 800;
+}
+.titles {
+  font-size: 3rem;
+}
