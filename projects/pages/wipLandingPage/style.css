@@ -43,6 +43,7 @@ i {
 section,
 .box {
   max-width: 60%;
+  word-wrap: break-word;
 }
 
 .container {
@@ -51,7 +52,7 @@ section,
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15rem;
+  gap: 150px;
 }
 
 /* SPECIFIC STYLES */
