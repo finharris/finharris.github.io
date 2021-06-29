@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+$text-color: rgb(233, 233, 233);
+// $background-color: rgb(15, 15, 15);
+$background-color: rgb(20, 25, 29);
+$nav-background-color: rgb(13, 16, 19);
+
+@import './scrollbar';
+@import './animatedunderline';
+@import './enlargeimage';
+@import './hamburgermenu';
+
+:root {
+  font-family: 'Open Sans', sans-serif;
+  color: $text-color;
+  background: $background-color;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  color: $text-color;
+  text-decoration: none;
+}
+
+.container {
+  height: 100vh;
+  scroll-snap-type: y proximity;
+  overflow-y: scroll;
+
+  // General styles for pages
+  section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+
+    .header {
+      text-transform: capitalize;
+    }
+
+    .image {
+      max-height: 60vh;
+      max-width: 80%;
+      border: 20px solid white;
+      box-shadow: 0px 4px 25px 4px #000000;
+      cursor: pointer;
+
+      transition: all 0.2s ease-out;
+    }
+  }
+
+  footer {
+    scroll-snap-align: start;
+    height: 201px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+    background-color: $nav-background-color;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 3rem;
+  width: 5rem;
+  opacity: 0.2;
+  left: calc(50% - 2.5rem);
+}
+
+// pages
+.page1 {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+
+  .name-plate {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    .title {
+      font-size: 40px;
+      font-weight: 500;
+    }
+
+    .job-title {
+      letter-spacing: 0.37rem;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
