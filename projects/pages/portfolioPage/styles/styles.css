@@ -146,8 +146,8 @@
 
 .container {
   height: 100vh;
-  -ms-scroll-snap-type: y proximity;
-      scroll-snap-type: y proximity;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
   overflow-y: scroll;
 }
 
@@ -187,7 +187,7 @@
 
 .container footer {
   scroll-snap-align: start;
-  height: 201px;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
