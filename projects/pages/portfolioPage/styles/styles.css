@@ -22,7 +22,6 @@
 
 .animated-underline {
   position: relative;
-  cursor: pointer;
 }
 
 .animated-underline::before {
@@ -203,6 +202,10 @@
 
 .container footer a {
   text-decoration: underline;
+}
+
+.container footer .back-to-top {
+  cursor: pointer;
 }
 
 .scroll-down {
