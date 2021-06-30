@@ -1,5 +1,5 @@
 // IMAHE ENLARGING
-const images = document.querySelectorAll('.image');
+const images = document.querySelectorAll('.resizable-image');
 
 for (const image of images) {
   image.addEventListener('click', e => {

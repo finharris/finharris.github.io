@@ -52,10 +52,12 @@
 .header-sect {
   position: absolute;
   right: 2rem;
+  z-index: 1000;
 }
 
 .header-sect .open {
   font-size: 3rem;
+  cursor: pointer;
 }
 
 .header-sect .ham-menu {
@@ -88,6 +90,7 @@
   position: absolute;
   right: 2rem;
   top: 0;
+  cursor: pointer;
 }
 
 .header-sect .ham-menu ul {
