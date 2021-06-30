@@ -146,8 +146,8 @@
 
 .container {
   height: 100vh;
-  -ms-scroll-snap-type: y proximity;
-      scroll-snap-type: y proximity;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
   overflow-y: scroll;
 }
 
