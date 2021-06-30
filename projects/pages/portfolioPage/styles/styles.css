@@ -167,6 +167,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2rem;
+  position: relative;
 }
 
 .container section .header {
@@ -180,8 +181,8 @@
   -webkit-box-shadow: 0px 4px 25px 4px #000000;
           box-shadow: 0px 4px 25px 4px #000000;
   cursor: pointer;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
 }
 
 .container footer {
