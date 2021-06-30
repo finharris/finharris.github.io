@@ -27,7 +27,7 @@ $nav-background-color: rgb(13, 16, 19);
 
 .container {
   height: 100vh;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   overflow-y: scroll;
 
   // General styles for pages
