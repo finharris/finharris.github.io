@@ -4,6 +4,7 @@
   --background-dark-2: #121214;
   --main-text: #ececec;
   --call-to-action: rgb(23, 169, 253);
+  --call-to-action-hover: rgb(20, 148, 223);
 }
 
 * {
@@ -91,7 +92,13 @@ nav {
   text-decoration: none;
   font-size: 20px;
   font-weight: 500;
+  text-transform: capitalize;
   cursor: pointer;
+  transition: font-weight 0.2s ease-out;
+}
+
+.nav-item a:hover {
+  font-weight: 700;
 }
 
 @media screen and (min-width: 770px) {

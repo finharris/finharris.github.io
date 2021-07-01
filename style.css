@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .landing {
   display: flex;
   flex-direction: column;
@@ -53,10 +57,15 @@
   outline: none;
   font-size: 2rem;
   padding: 0.75rem;
-  border-radius: 1rem;
+  border-radius: 0.8rem;
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
   cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.projects-call-to-action:hover {
+  background-color: var(--call-to-action-hover);
 }
 
 .bottom-flex-wrapper {
