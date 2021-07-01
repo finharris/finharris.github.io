@@ -249,7 +249,8 @@
 }
 
 .page1 .name-plate .job-title {
-  letter-spacing: 0.37rem;
+  letter-spacing: 0.4rem;
+  text-indent: 0.4rem;
 }
 
 .hidden {
