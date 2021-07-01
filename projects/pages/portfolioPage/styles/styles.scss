@@ -100,8 +100,10 @@ $nav-background-color: rgb(13, 16, 19);
       font-weight: 500;
     }
 
+    $job-title-letter-spacing: 0.4rem;
     .job-title {
-      letter-spacing: 0.37rem;
+      letter-spacing: $job-title-letter-spacing;
+      text-indent: $job-title-letter-spacing;
     }
   }
 }
