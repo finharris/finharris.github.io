@@ -1,0 +1,85 @@
+.container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+
+  // General styles for pages
+  section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+
+    .header {
+      text-transform: capitalize;
+    }
+
+    .image {
+      max-height: 60vh;
+      max-width: 80%;
+      border: 20px solid white;
+      box-shadow: 0px 4px 25px 4px #000000;
+      cursor: pointer;
+
+      transition: max-height 0.2s ease-out;
+    }
+  }
+
+  footer {
+    scroll-snap-align: start;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+
+    a {
+      text-decoration: underline;
+    }
+
+    .back-to-top {
+      cursor: pointer;
+    }
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 3rem;
+  width: 5rem;
+  opacity: 0.2;
+  left: calc(50% - 2.5rem);
+}
+
+// pages
+.page1 {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+
+  .name-plate {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    .title {
+      font-size: 40px;
+      font-weight: 500;
+    }
+
+    $job-title-letter-spacing: 0.4rem;
+    .job-title {
+      letter-spacing: $job-title-letter-spacing;
+      text-indent: $job-title-letter-spacing;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
