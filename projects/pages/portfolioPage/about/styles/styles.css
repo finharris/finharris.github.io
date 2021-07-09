@@ -71,6 +71,13 @@ html {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .content {
+    width: 65%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
