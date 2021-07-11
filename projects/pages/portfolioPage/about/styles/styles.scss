@@ -1,0 +1,56 @@
+body,
+html {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  gap: 4rem;
+  width: 40%;
+  height: max-content;
+  padding: 2rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 7px 20px 0px rgba(0, 0, 0, 0.5);
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+
+    .name {
+      .full-name {
+        font-weight: 800;
+        font-size: 2rem;
+      }
+
+      .job-title {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .portrait-image {
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    border-radius: 0.6rem;
+  }
+
+  @media screen and (max-width: 1350px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media screen and (max-width: 1130px) {
+    width: 65%;
+  }
+}
