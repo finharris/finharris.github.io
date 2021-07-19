@@ -1,0 +1,98 @@
+@import url(//db.onlinewebfonts.com/c/721c73bcd2e49f3a621991089838b503?family=Euclid+Circular+B+Medium);
+
+@import './variables';
+
+* {
+  font-family: $font;
+  margin: 0;
+  padding: 0;
+  color: $text-colour;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: $background;
+  height: 100%;
+}
+
+header {
+  // background: darken($color: $background, $amount: 10s);
+  min-height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+
+  @media screen and (min-width: 950px) {
+    padding: 0rem 6rem;
+  }
+
+  @media screen and (max-width: 510px) {
+    flex-direction: column;
+    padding: 2rem 0rem;
+    gap: 1rem;
+  }
+
+  .logo {
+    max-width: 200px;
+  }
+
+  nav {
+    ul {
+      list-style-type: none;
+      display: flex;
+      font-size: 1.25rem;
+      gap: 1.5rem;
+
+      @media screen and (min-width: 950px) {
+        gap: 3rem;
+      }
+
+      li {
+        position: relative;
+
+        a {
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        transition: font-weight 100ms ease-out;
+        transition: transform 100ms ease-out;
+
+        &:hover {
+          font-weight: 600;
+          transform: scale(1.1);
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          background: currentColor;
+          width: 100%;
+          height: 0.15rem;
+          bottom: 0;
+          left: 0;
+          transform-origin: right;
+          transform: scaleX(0);
+
+          transition: transform 100ms ease-out;
+        }
+
+        &:hover::after {
+          content: '';
+          position: absolute;
+          background: currentColor;
+          width: 100%;
+          height: 0.15rem;
+          bottom: 0;
+          left: 0;
+          transform-origin: left;
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+@import url(//db.onlinewebfonts.com/c/721c73bcd2e49f3a621991089838b503?family=Euclid+Circular+B+Medium);
+* {
+  font-family: "Euclid Circular B Medium", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #4b597b;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #e7e2eb;
+  height: 100%;
+}
+
+header {
+  min-height: 12vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0rem 2rem;
+}
+
+@media screen and (min-width: 950px) {
+  header {
+    padding: 0rem 6rem;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 2rem 0rem;
+    gap: 1rem;
+  }
+}
+
+header .logo {
+  max-width: 200px;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.25rem;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 950px) {
+  header nav ul {
+    gap: 3rem;
+  }
+}
+
+header nav ul li {
+  position: relative;
+  -webkit-transition: font-weight 100ms ease-out;
+  transition: font-weight 100ms ease-out;
+  -webkit-transition: -webkit-transform 100ms ease-out;
+  transition: -webkit-transform 100ms ease-out;
+  transition: transform 100ms ease-out;
+  transition: transform 100ms ease-out, -webkit-transform 100ms ease-out;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+header nav ul li:hover {
+  font-weight: 600;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+header nav ul li::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  width: 100%;
+  height: 0.15rem;
+  bottom: 0;
+  left: 0;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 100ms ease-out;
+  transition: -webkit-transform 100ms ease-out;
+  transition: transform 100ms ease-out;
+  transition: transform 100ms ease-out, -webkit-transform 100ms ease-out;
+}
+
+header nav ul li:hover::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  width: 100%;
+  height: 0.15rem;
+  bottom: 0;
+  left: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+/*# sourceMappingURL=style.css.map */
