@@ -1,0 +1,46 @@
+@import '../universalStyles/variables';
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 88vh;
+  width: 100%;
+
+  section {
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+    button {
+      background: $gradient;
+      background-size: 200% 200%;
+      color: $background;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.75rem;
+      font-size: 1.25rem;
+      padding: 0.5rem;
+      cursor: pointer;
+
+      transition: all 200ms ease-out;
+
+      &:hover {
+        background-position: bottom;
+        background-size: 120% 120%;
+      }
+    }
+  }
+}
