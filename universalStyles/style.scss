@@ -104,3 +104,31 @@ header {
     }
   }
 }
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 950px) {
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}

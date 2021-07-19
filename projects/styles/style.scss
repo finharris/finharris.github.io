@@ -16,8 +16,13 @@ main {
     justify-content: center;
     gap: 1rem;
 
-    h3 {
-      font-size: 1.5rem;
+    a {
+      font-size: 1.3rem;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

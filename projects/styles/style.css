@@ -31,7 +31,12 @@ main section {
   gap: 1rem;
 }
 
-main section h3 {
-  font-size: 1.5rem;
+main section a {
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+main section a:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */
