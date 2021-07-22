@@ -28,3 +28,12 @@ searchBox.addEventListener('focus', () => {
 searchBox.addEventListener('blur', () => {
   title.style.fontSize = '2.6em';
 });
+
+// dropdown
+
+const dropdownButton = document.querySelector('.dropbtn');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+dropdownButton.addEventListener('click', () => {
+  dropdownContent.classList.toggle('hidden');
+});

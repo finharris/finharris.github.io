@@ -1,49 +1,91 @@
 * {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	margin: 0;
-	padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 #page {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 #title {
-	margin-bottom: 30px;
-	font-size: 2.6em;
-	font-weight: 640;
-	transition: .5s;
+  margin-bottom: 30px;
+  font-size: 2.6em;
+  font-weight: 640;
+  transition: 0.5s;
 }
 
 #searchElement {
-	height: 40px;
-	display: flex;
-	box-shadow: 0px 7px 10px 2px rgba(0,0,0,.2);
-	border-radius: 5px;
-	overflow: hidden;
-}:focus{
-	outline-width: 0;
+  height: 40px;
+  display: flex;
+  box-shadow: 0px 7px 10px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+:focus {
+  outline-width: 0;
 }
 
 #searchBox {
-	font-size: 17px;
-	padding-left: 5px;
-	padding-right: 5px;
-	height: 40px;
-	width: 300px;
-	border: 0;
-	border-radius: 0;
+  font-size: 17px;
+  padding-left: 5px;
+  padding-right: 5px;
+  height: 40px;
+  width: 300px;
+  border: 0;
+  border-radius: 0;
 }
 
 #searchButton {
-	height: 40px;
-	width: 40px;
-	border: 0;
-	border-radius: 0;
-	cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+/* dropdown */
+
+.dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: max-content;
+}
+
+.dropbtn:hover {
+  background: rgb(209, 209, 209);
+}
+
+.dropbtn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  padding: 0.7rem;
+  width: 100%;
+}
+
+.dropdown-content {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown-content > a {
+  color: black;
+}
+
+.dropdown-content > a:hover {
+  color: red;
+}
+
+.hidden {
+  display: none;
 }
