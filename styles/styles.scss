@@ -8,21 +8,13 @@ main {
   width: 100%;
 
   section {
-    width: 70%;
+    width: 90%;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-
-    h3 {
-      font-size: 1.5rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
 
     button {
       background: $gradient;
@@ -31,7 +23,7 @@ main {
       font-weight: 600;
       border: none;
       border-radius: 0.75rem;
-      font-size: 1.25rem;
+      font-size: 1.7rem;
       padding: 0.5rem;
       cursor: pointer;
 

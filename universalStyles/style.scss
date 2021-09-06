@@ -1,4 +1,19 @@
-@import url(//db.onlinewebfonts.com/c/721c73bcd2e49f3a621991089838b503?family=Euclid+Circular+B+Medium);
+@import url(https://db.onlinewebfonts.com/c/721c73bcd2e49f3a621991089838b503?family=Euclid+Circular+B+Medium);
+
+@font-face {
+  font-family: 'Euclid Circular B Medium';
+  src: url('//db.onlinewebfonts.com/t/721c73bcd2e49f3a621991089838b503.eot');
+  src: url('//db.onlinewebfonts.com/t/721c73bcd2e49f3a621991089838b503.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/721c73bcd2e49f3a621991089838b503.woff2')
+      format('woff2'),
+    url('//db.onlinewebfonts.com/t/721c73bcd2e49f3a621991089838b503.woff')
+      format('woff'),
+    url('//db.onlinewebfonts.com/t/721c73bcd2e49f3a621991089838b503.ttf')
+      format('truetype'),
+    url('//db.onlinewebfonts.com/t/721c73bcd2e49f3a621991089838b503.svg#Euclid Circular B Medium')
+      format('svg');
+}
 
 @import './variables';
 
@@ -79,21 +94,42 @@ header {
           transform-origin: right;
           transform: scaleX(0);
 
-          transition: transform 100ms ease-out;
+          transition: transform 200ms ease-out;
         }
 
         &:hover::after {
-          content: '';
-          position: absolute;
-          background: currentColor;
-          width: 100%;
-          height: 0.15rem;
-          bottom: 0;
-          left: 0;
           transform-origin: left;
           transform: scaleX(1);
         }
       }
     }
+  }
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+@media screen and (max-width: 950px) {
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.2rem;
   }
 }
