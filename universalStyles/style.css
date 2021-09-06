@@ -1,6 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/721c73bcd2e49f3a621991089838b503?family=Euclid+Circular+B+Medium);
 * {
   font-family: "Euclid Circular B Medium", Arial, sans-serif;
+  font-display: swap;
   margin: 0;
   padding: 0;
   color: #4b597b;
@@ -47,7 +48,7 @@ header {
 }
 
 header .logo {
-  max-width: 200px;
+  width: 200px;
 }
 
 header nav ul {

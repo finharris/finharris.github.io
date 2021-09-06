@@ -4,6 +4,7 @@
 
 * {
   font-family: $font;
+  font-display: swap;
   margin: 0;
   padding: 0;
   color: $text-colour;
@@ -37,7 +38,7 @@ header {
   }
 
   .logo {
-    max-width: 200px;
+    width: 200px;
   }
 
   nav {
