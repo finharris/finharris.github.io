@@ -261,13 +261,17 @@ const endInput = document.querySelector('.endInput');
 const startButton = document.querySelector('.startButton');
 const clearButton = document.querySelector('.clearButton');
 
-function getEndPoint(input) {
+function getEndPoint(input, isEnd) {
   let p = input.value.split(',');
 
   p = p.filter(coord => 0 <= parseInt(coord) && parseInt(coord) <= 10);
 
   if (p.length < 2) {
-    p = ['2', '9'];
+    if (isEnd) {
+      p = ['9', '2'];
+    } else {
+      p = ['2', '9'];
+    }
   }
 
   return p;
@@ -275,7 +279,7 @@ function getEndPoint(input) {
 
 clearButton.addEventListener('click', () => {
   let startPoint = getEndPoint(startInput);
-  let endPoint = getEndPoint(endInput);
+  let endPoint = getEndPoint(endInput, true);
 
   console.log(startPoint);
   console.log(endPoint);
@@ -293,7 +297,7 @@ startButton.addEventListener('click', () => {
 
   if (!mainGrid.isNew) {
     let startPoint = getEndPoint(startInput);
-    let endPoint = getEndPoint(endInput);
+    let endPoint = getEndPoint(endInput, true);
 
     mainGrid = new Grid(
       10,
