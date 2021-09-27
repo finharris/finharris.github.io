@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A* Pathfinding Visualiser</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <button class="startButton">START</button>
+      <div class="speed">
+        <label for="speed">Speed (ms):</label>
+        <input type="number" class="inputSpeed" name="speed" />
+      </div>
+      <div class="startPoint">
+        <label for="startPoint">Start Point('x,y'):</label>
+        <input type="text" name="startPoint" class="startInput" />
+      </div>
+      <div class="endPoint">
+        <label for="endPoint">End Point('x,y'):</label>
+        <input type="text" name="endPoint" class="endInput" />
+      </div>
+      <button class="clearButton">CLEAR/UPDATE</button>
+    </header>
+    <div class="container"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
