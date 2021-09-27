@@ -253,7 +253,7 @@ class Grid {
   }
 }
 
-let mainGrid = new Grid(10, 10, { x: 2, y: 9 }, { x: 9, y: 2 });
+let mainGrid = new Grid(10, 10, { x: 2, y: 2 }, { x: 9, y: 9 });
 
 const speedInput = document.querySelector('.inputSpeed');
 const startInput = document.querySelector('.startInput');
@@ -268,9 +268,9 @@ function getEndPoint(input, isEnd) {
 
   if (p.length < 2) {
     if (isEnd) {
-      p = ['9', '2'];
+      p = ['9', '9'];
     } else {
-      p = ['2', '9'];
+      p = ['2', '2'];
     }
   }
 

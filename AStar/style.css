@@ -40,11 +40,30 @@ button {
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  position: relative;
 }
 
 .row {
   display: flex;
+  position: relative;
+}
+
+.row:first-of-type::after {
+  content: '1,1';
+  position: absolute;
+  bottom: 0;
+  left: 0.1rem;
+  color: gray;
+}
+
+.row:last-of-type::after {
+  content: '10,10';
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.1rem;
+  color: gray;
 }
 
 .node {
