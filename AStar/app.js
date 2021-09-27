@@ -281,9 +281,6 @@ clearButton.addEventListener('click', () => {
   let startPoint = getEndPoint(startInput);
   let endPoint = getEndPoint(endInput, true);
 
-  console.log(startPoint);
-  console.log(endPoint);
-
   mainGrid = new Grid(
     10,
     10,
