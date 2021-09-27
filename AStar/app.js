@@ -52,12 +52,12 @@ class Node {
         (Math.max(current.y, this.y) - Math.min(current.y, this.y)) ** 2
     );
 
-    this.g = Math.min(current.f + distanceFromCurrent, this.g);
+    this.g = Math.min(current.g + distanceFromCurrent, this.g);
     this.h = this.calculateHValue(endPoint);
     this.calculateFValue();
 
     this.color = OPEN;
-    this.content = this.f;
+    // this.content = Math.round(this.f);
     this.isLocked = true;
     this.parent = current;
   }
@@ -104,14 +104,17 @@ class Grid {
     this.renderGrid();
   }
 
-  setEndPoint(x, y, setFValue) {
+  setEndPoint(x, y, isStartPoint) {
     const node = this.grid[y - 1][x - 1];
     node.color = ENDPOINT;
     node.isLocked = true;
-    if (setFValue) {
+    if (isStartPoint) {
+      node.content = 'start';
       node.g = 0;
       node.h = 0;
       node.calculateFValue();
+    } else {
+      node.content = 'end';
     }
   }
 
@@ -131,6 +134,7 @@ class Grid {
           this.renderGrid();
         });
         // tempNode.innerText = node.content;
+        tempNode.setAttribute('content', node.content);
 
         tempRow.appendChild(tempNode);
       }

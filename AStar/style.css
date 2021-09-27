@@ -70,4 +70,15 @@ button {
   width: 50px;
   aspect-ratio: 1/1;
   border: 1px solid black;
+  position: relative;
+}
+
+.node::after {
+  content: attr(content);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: gray;
+  font-weight: 600;
 }
