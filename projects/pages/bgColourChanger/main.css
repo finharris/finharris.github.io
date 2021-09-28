@@ -1,0 +1,46 @@
+* {
+    font-family: 'Segoe UI';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255,255,255);
+    overflow: hidden;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    font-size: large;
+    font-weight: 600;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:focus {
+    outline-width: 0;
+}
+
+div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    text-align: center;
+    opacity: 0;
+    cursor: pointer;
+}
+
+h5 {
+    position: fixed;
+    top: -20px;
+    left: 0;
+}
