@@ -68,7 +68,7 @@ button {
 }
 
 .row:last-of-type::after {
-  content: '10,10';
+  content: attr(tr-coord);
   position: absolute;
   top: 0;
   right: 0;

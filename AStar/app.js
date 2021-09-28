@@ -131,6 +131,7 @@ class Grid {
     for (const row of this.grid) {
       let tempRow = document.createElement('div');
       tempRow.classList.add('row');
+      tempRow.setAttribute('tr-coord', `${COLS},${ROWS}`);
       for (const node of row) {
         let tempNode = document.createElement('div');
         tempNode.classList.add('node');
@@ -177,11 +178,11 @@ class Grid {
           currentNeibours.push(this.getNodeFromGrid(current.x - 1, current.y));
         }
         // right
-        if (current.x < 10) {
+        if (current.x < this.cols) {
           currentNeibours.push(this.getNodeFromGrid(current.x + 1, current.y));
         }
         // down
-        if (current.y < 10) {
+        if (current.y < this.rows) {
           currentNeibours.push(this.getNodeFromGrid(current.x, current.y + 1));
         }
         // up
@@ -189,7 +190,7 @@ class Grid {
           currentNeibours.push(this.getNodeFromGrid(current.x, current.y - 1));
         }
         // down-left
-        if (current.y < 10 && current.x > 1) {
+        if (current.y < this.rows && current.x > 1) {
           currentNeibours.push(
             this.getNodeFromGrid(current.x - 1, current.y + 1)
           );
@@ -201,13 +202,13 @@ class Grid {
           );
         }
         // down-right
-        if (current.y < 10 && current.x < 10) {
+        if (current.y < this.rows && current.x < this.cols) {
           currentNeibours.push(
             this.getNodeFromGrid(current.x + 1, current.y + 1)
           );
         }
         // up-right
-        if (current.y > 1 && current.x < 10) {
+        if (current.y > 1 && current.x < this.cols) {
           currentNeibours.push(
             this.getNodeFromGrid(current.x + 1, current.y - 1)
           );
@@ -263,7 +264,15 @@ class Grid {
   }
 }
 
-let mainGrid = new Grid(10, 10, { x: 2, y: 2 }, { x: 9, y: 9 });
+const COLS = 10;
+const ROWS = 10;
+
+let mainGrid = new Grid(
+  COLS,
+  ROWS,
+  { x: 2, y: 2 },
+  { x: COLS - 1, y: ROWS - 1 }
+);
 
 const speedInput = document.querySelector('.inputSpeed');
 const startInput = document.querySelector('.startInput');
@@ -276,13 +285,21 @@ const clearButton = document.querySelector('.clearButton');
 function getEndPoint(input, isEnd) {
   let p = input.value.split(',');
 
-  p = p.filter(coord => 0 <= parseInt(coord) && parseInt(coord) <= 10);
-
   if (p.length < 2) {
     if (isEnd) {
-      p = ['9', '9'];
+      p = [`${COLS - 1}`, `${ROWS - 1}`];
     } else {
       p = ['2', '2'];
+    }
+  } else {
+    if (isEnd) {
+      if (p[0] < 1 || p[0] > COLS || p[1] < 1 || p[1] > ROWS) {
+        p = [`${COLS - 1}`, '9'];
+      }
+    } else {
+      if (p[0] < 1 || p[0] > COLS || p[1] < 1 || p[1] > ROWS) {
+        p = ['2', '2'];
+      }
     }
   }
 
@@ -294,8 +311,8 @@ clearButton.addEventListener('click', () => {
   let endPoint = getEndPoint(endInput, true);
 
   mainGrid = new Grid(
-    10,
-    10,
+    COLS,
+    ROWS,
     { x: parseInt(startPoint[0]), y: parseInt(startPoint[1]) },
     { x: parseInt(endPoint[0]), y: parseInt(endPoint[1]) }
   );
@@ -309,8 +326,8 @@ startButton.addEventListener('click', () => {
     let endPoint = getEndPoint(endInput, true);
 
     mainGrid = new Grid(
-      10,
-      10,
+      COLS,
+      ROWS,
       { x: parseInt(startPoint[0]), y: parseInt(startPoint[1]) },
       { x: parseInt(endPoint[0]), y: parseInt(endPoint[1]) }
     );
