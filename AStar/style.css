@@ -1,6 +1,8 @@
 :root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
+
+  --input-width: 60px;
 }
 
 * {
@@ -30,6 +32,14 @@ header {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+}
+
+header input[type='text'] {
+  width: var(--input-width);
+}
+
+header input[type='number'] {
+  width: var(--input-width);
 }
 
 button {
