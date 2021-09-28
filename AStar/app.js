@@ -45,21 +45,27 @@ class Node {
     }
   }
 
-  open(current, endPoint) {
+  open(current, endPoint, showFValue) {
     // let distanceFromCurrent = sqrt(differenceinx + differenceiny);
     let distanceFromCurrent = Math.sqrt(
       (Math.max(current.x, this.x) - Math.min(current.x, this.x)) ** 2 +
         (Math.max(current.y, this.y) - Math.min(current.y, this.y)) ** 2
     );
 
-    this.g = Math.min(current.g + distanceFromCurrent, this.g);
+    if (current.g + distanceFromCurrent <= this.g) {
+      this.parent = current;
+      this.g = current.g + distanceFromCurrent;
+    } // else this.g and parent stays same
+
     this.h = this.calculateHValue(endPoint);
     this.calculateFValue();
 
     this.color = OPEN;
     // this.content = Math.round(this.f);
+    if (showFValue) {
+      this.content = this.f.toFixed('2');
+    }
     this.isLocked = true;
-    this.parent = current;
   }
 
   close() {
@@ -146,7 +152,7 @@ class Grid {
     return this.grid[y - 1][x - 1];
   }
 
-  aStarPathfind(speed) {
+  aStarPathfind(speed, showFValue) {
     this.isNew = false;
 
     let open = [this.getNodeFromGrid(this.startpoint.x, this.startpoint.y)];
@@ -212,8 +218,8 @@ class Grid {
         node => !node.isClosed && !node.isWall
       );
 
-      for (const neibour of currentNeibours) {
-        neibour.open(current, this.endpoint);
+      for (const neighbor of currentNeibours) {
+        neighbor.open(current, this.endpoint, showFValue);
       }
 
       open = [...open, ...currentNeibours];
@@ -262,6 +268,8 @@ let mainGrid = new Grid(10, 10, { x: 2, y: 2 }, { x: 9, y: 9 });
 const speedInput = document.querySelector('.inputSpeed');
 const startInput = document.querySelector('.startInput');
 const endInput = document.querySelector('.endInput');
+const showFValueInput = document.querySelector('.showFValueInput');
+
 const startButton = document.querySelector('.startButton');
 const clearButton = document.querySelector('.clearButton');
 
@@ -308,5 +316,7 @@ startButton.addEventListener('click', () => {
     );
   }
 
-  mainGrid.aStarPathfind(speedInput.value);
+  showFValueInput.checked
+    ? mainGrid.aStarPathfind(speedInput.value, true)
+    : mainGrid.aStarPathfind(speedInput.value);
 });
