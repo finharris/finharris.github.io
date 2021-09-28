@@ -264,7 +264,7 @@ class Grid {
   }
 }
 
-const COLS = 10;
+const COLS = 15;
 const ROWS = 10;
 
 let mainGrid = new Grid(
