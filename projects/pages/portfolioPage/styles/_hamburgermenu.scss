@@ -1,11 +1,36 @@
 .header-sect {
   position: absolute;
   right: 2rem;
+  top: 2rem;
   z-index: 1000;
 
   .open {
-    font-size: 3rem;
+    // font-size: 3rem;
+    background-color: $text-color;
+    width: 2.5rem;
+    height: 5px;
     cursor: pointer;
+    position: relative;
+  }
+
+  .open::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+    height: 5px;
+    background-color: $text-color;
+  }
+
+  .open::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    margin-bottom: 5px;
+    height: 5px;
+    background-color: $text-color;
   }
 
   .ham-menu {
@@ -22,11 +47,23 @@
     transition: clip-path 0.5s ease-out;
 
     .close {
-      font-size: 3rem;
       position: absolute;
       right: 2rem;
-      top: 0;
+      top: 2.7rem;
+      background-color: $text-color;
+      width: 2.5rem;
+      height: 5px;
+      transform: rotate(45deg);
       cursor: pointer;
+    }
+
+    .close::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 5px;
+      background-color: $text-color;
+      transform: rotate(-90deg);
     }
 
     ul {
