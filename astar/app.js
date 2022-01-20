@@ -1,9 +1,9 @@
-const UNSEARCHED = 'lightgray';
-const SEARCHED = 'darkred';
-const OPEN = 'lightgreen';
-const CLOSED = 'red';
-const WALL = 'black';
-const ENDPOINT = 'lightblue';
+const UNSEARCHED = "lightgray";
+const SEARCHED = "darkred";
+const OPEN = "lightgreen";
+const CLOSED = "red";
+const WALL = "black";
+const ENDPOINT = "lightblue";
 
 class Node {
   constructor(x, y, endPoint) {
@@ -16,7 +16,7 @@ class Node {
     this.g = Infinity;
     this.h = this.calculateHValue(endPoint);
     this.f = this.g + this.h;
-    this.content = '';
+    this.content = "";
     this.parent = undefined;
   }
 
@@ -47,10 +47,15 @@ class Node {
 
   open(current, endPoint, showFValue) {
     // let distanceFromCurrent = sqrt(differenceinx + differenceiny);
+    // let distanceFromCurrent = Math.sqrt(
+    //   (Math.max(current.x, this.x) - Math.min(current.x, this.x)) ** 2 +
+    //     (Math.max(current.y, this.y) - Math.min(current.y, this.y)) ** 2
+    // );
+
     let distanceFromCurrent = Math.sqrt(
-      (Math.max(current.x, this.x) - Math.min(current.x, this.x)) ** 2 +
-        (Math.max(current.y, this.y) - Math.min(current.y, this.y)) ** 2
+      (current.x - this.x) ** 2 + (current.y - this.y) ** 2
     );
+    distanceFromCurrent = Math.abs(distanceFromCurrent);
 
     if (current.g + distanceFromCurrent <= this.g) {
       this.parent = current;
@@ -63,7 +68,7 @@ class Node {
     this.color = OPEN;
     // this.content = Math.round(this.f);
     if (showFValue) {
-      this.content = this.f.toFixed('2');
+      this.content = this.f.toFixed("2");
     }
     this.isLocked = true;
   }
@@ -81,7 +86,7 @@ class Node {
     this.g = Infinity;
     this.h = 0;
     this.f = this.g + this.h;
-    this.content = '';
+    this.content = "";
   }
 }
 
@@ -115,33 +120,33 @@ class Grid {
     node.color = ENDPOINT;
     node.isLocked = true;
     if (isStartPoint) {
-      node.content = 'start';
+      node.content = "start";
       node.g = 0;
       node.h = 0;
       node.calculateFValue();
     } else {
-      node.content = 'end';
+      node.content = "end";
     }
   }
 
   renderGrid() {
-    let container = document.querySelector('.container');
-    container.innerHTML = '';
+    let container = document.querySelector(".container");
+    container.innerHTML = "";
 
     for (const row of this.grid) {
-      let tempRow = document.createElement('div');
-      tempRow.classList.add('row');
-      tempRow.setAttribute('tr-coord', `${COLS},${ROWS}`);
+      let tempRow = document.createElement("div");
+      tempRow.classList.add("row");
+      tempRow.setAttribute("tr-coord", `${COLS},${ROWS}`);
       for (const node of row) {
-        let tempNode = document.createElement('div');
-        tempNode.classList.add('node');
+        let tempNode = document.createElement("div");
+        tempNode.classList.add("node");
         tempNode.style.backgroundColor = node.color;
-        tempNode.addEventListener('mousedown', () => {
+        tempNode.addEventListener("mousedown", () => {
           node.toggleWall();
           this.renderGrid();
         });
         // tempNode.innerText = node.content;
-        tempNode.setAttribute('content', node.content);
+        tempNode.setAttribute("content", node.content);
 
         tempRow.appendChild(tempNode);
       }
@@ -163,7 +168,7 @@ class Grid {
       let current = open[0];
 
       if (!current) {
-        alert('not found');
+        alert("not found");
         clearInterval(loop);
         return;
       }
@@ -216,7 +221,7 @@ class Grid {
       }
 
       currentNeibours = currentNeibours.filter(
-        node => !node.isClosed && !node.isWall
+        (node) => !node.isClosed && !node.isWall
       );
 
       for (const neighbor of currentNeibours) {
@@ -274,31 +279,31 @@ let mainGrid = new Grid(
   { x: COLS - 1, y: ROWS - 1 }
 );
 
-const speedInput = document.querySelector('.inputSpeed');
-const startInput = document.querySelector('.startInput');
-const endInput = document.querySelector('.endInput');
-const showFValueInput = document.querySelector('.showFValueInput');
+const speedInput = document.querySelector(".inputSpeed");
+const startInput = document.querySelector(".startInput");
+const endInput = document.querySelector(".endInput");
+const showFValueInput = document.querySelector(".showFValueInput");
 
-const startButton = document.querySelector('.startButton');
-const clearButton = document.querySelector('.clearButton');
+const startButton = document.querySelector(".startButton");
+const clearButton = document.querySelector(".clearButton");
 
 function getEndPoint(input, isEnd) {
-  let p = input.value.split(',');
+  let p = input.value.split(",");
 
   if (p.length < 2) {
     if (isEnd) {
       p = [`${COLS - 1}`, `${ROWS - 1}`];
     } else {
-      p = ['2', '2'];
+      p = ["2", "2"];
     }
   } else {
     if (isEnd) {
       if (p[0] < 1 || p[0] > COLS || p[1] < 1 || p[1] > ROWS) {
-        p = [`${COLS - 1}`, '9'];
+        p = [`${COLS - 1}`, "9"];
       }
     } else {
       if (p[0] < 1 || p[0] > COLS || p[1] < 1 || p[1] > ROWS) {
-        p = ['2', '2'];
+        p = ["2", "2"];
       }
     }
   }
@@ -306,7 +311,7 @@ function getEndPoint(input, isEnd) {
   return p;
 }
 
-clearButton.addEventListener('click', () => {
+clearButton.addEventListener("click", () => {
   let startPoint = getEndPoint(startInput);
   let endPoint = getEndPoint(endInput, true);
 
@@ -318,7 +323,7 @@ clearButton.addEventListener('click', () => {
   );
 });
 
-startButton.addEventListener('click', () => {
+startButton.addEventListener("click", () => {
   // mainGrid = new Grid(10, 10, { x: 2, y: 9 }, { x: 9, y: 2 });
 
   if (!mainGrid.isNew) {
