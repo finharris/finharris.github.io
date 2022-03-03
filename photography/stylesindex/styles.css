@@ -25,10 +25,6 @@
   position: relative;
 }
 
-.container section .header {
-  text-transform: capitalize;
-}
-
 .container section .image {
   max-height: 60vh;
   max-width: 80%;
