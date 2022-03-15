@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon" />
+    <title>Fin Harris</title>
+  </head>
+  <body>
+    <header id="header">
+      <nav>
+        <div class="color-bar"></div>
+        <div class="nav-content">
+          <h4><strong>Fin</strong>Harris</h4>
+          <ul>
+            <li class="nav-item"><a href="#projects">Projects</a></li>
+            <li class="nav-item"><a href="#about">About</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+            <li class="btt nav-item"><a href="#header">back to top</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="hero">
+        <span>
+          <h1>Programmer, Photographer, Website Designer.</h1>
+          <span class="hero-location">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-map-pin"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <circle cx="12" cy="11" r="3"></circle>
+              <path
+                d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"
+              ></path>
+            </svg>
+            <h2>South East, England</h2>
+          </span>
+        </span>
+      </div>
+    </header>
+
+    <section class="projects" id="projects">
+      <section class="project-card">
+        <h3 class="project-card-title">
+          <a href="projects/pages/higherOrLower/" target="_blank"
+            >Higher or Lower Game</a
+          >
+        </h3>
+        <img
+          src="./assets/images/project-screenshots/higher-or-lower.png"
+          alt="#"
+          class="project-card-image"
+        />
+        <p class="project-card-description">
+          This is a simple number based higher or lower game. It asks the user
+          to select the range to play in and allows the user to guess if the
+          next randomly generated number will be higher or lower than the one
+          currently displayed.
+        </p>
+      </section>
+
+      <section class="project-card">
+        <h3 class="project-card-title">
+          <a href="projects/pages/searchEngine/" target="_blank"
+            >Search Engine Front-End</a
+          >
+        </h3>
+        <img
+          src="./assets/images/project-screenshots/search-engine.png"
+          alt="#"
+          class="project-card-image"
+        />
+        <p class="project-card-description">
+          This is a front-end experiment to make a more functional search engine
+          front end. It allows the user to type into the box without having the
+          text box selected, press enter to search and clear the search box to
+          allow the next search to happen sooner. It also has a couple useful
+          tools.
+        </p>
+      </section>
+
+      <section class="project-card">
+        <h3 class="project-card-title">
+          <a href="projects/pages/wipLandingPage/" target="_blank"
+            >three.js Test</a
+          >
+        </h3>
+        <img
+          src="./assets/images/project-screenshots/wip-landing-page.png"
+          alt="#"
+          class="project-card-image"
+        />
+        <p class="project-card-description">
+          A simple site mainly to test the use of three.js to render 3d objects
+          realtime in the browser. The scene camera physically moves when the
+          page is scrolled and the objects are animated to rotate.
+        </p>
+      </section>
+    </section>
+
+    <section class="about" id="about">
+      <img src="./assets/temp.jpg" alt="random image" class="about-image" />
+      <div class="about-words">
+        <h1 class="about-title">About Me</h1>
+        <p class="about-paragraph">
+          I am a programmer,
+          <a href="./photography/" target="_blank">photographer</a> and website
+          designer from the south east of England. I am passionate about all I
+          do and especially learning new ways of making websites, software,
+          games and pictures. I always look to take my knowledge and
+          understanding to the next level using any resources I can access -
+          whether that be: YouTube; the internet in general ;or other people I
+          can talk to.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h1 class="contact-title">Contact Me</h1>
+      <form
+        action="https://formsubmit.co/56654b8f2cbecfceb4d0f8ab62c553e3"
+        method="POST"
+        class="contact-form"
+      >
+        <fieldset class="name-area">
+          <span>
+            <label for="fname">First Name</label>
+            <input
+              type="text"
+              id="fname"
+              name="name"
+              placeholder="Your name.."
+            />
+          </span>
+          <span>
+            <label for="lname">Last Name</label>
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your last name.."
+            />
+          </span>
+        </fieldset>
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your email address.."
+        />
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="_subject"
+          placeholder="The Subject..."
+        />
+        <label for="subject">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Hello, I would like to ..."
+        ></textarea>
+        <input type="submit" class="contact-form-submit" value="Submit" />
+        <input
+          type="hidden"
+          name="_next"
+          value="https://finharris.github.io/"
+        />
+      </form>
+    </section>
+
+    <script src="./scripts/headerScroll.js"></script>
+    <script src="./scripts/contactForm.js"></script>
+  </body>
+</html>

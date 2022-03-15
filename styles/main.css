@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+:root {
+  box-sizing: border-box;
+  --primary: #6610f2;
+  --secondary: #caf0f8;
+  --light: #f7feff;
+  --dark: #210b2c;
+  --seperate-shadow: 0 0rem 2rem 1rem rgba(0, 0, 0, 0.2);
+  scroll-behavior: smooth;
+  color: var(--dark);
+}
+
+/* HEADER */
+header {
+  min-width: 100%;
+  padding-top: 2vh;
+  background: url("../assets/images/mundayevening.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--light);
+  position: relative;
+  z-index: 1000;
+  box-shadow: var(--seperate-shadow);
+}
+
+.color-bar {
+  background: var(--primary);
+  height: 2vh;
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transition: 500ms ease-out;
+}
+
+nav a {
+  color: var(--light);
+}
+
+.nav-scrolled {
+  background: var(--light);
+  box-shadow: 0 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  color: var(--dark);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+}
+
+.nav-content h4 {
+  font-size: 1.75rem;
+  font-weight: normal;
+}
+
+.nav-content ul {
+  list-style: none;
+  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.nav-item a {
+  transition: 500ms ease-out;
+}
+
+.btt {
+  font-size: smaller;
+}
+
+.hero {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hero-location {
+  display: flex;
+  gap: 5px;
+}
+
+/* PROJECTS */
+.projects {
+  background: var(--secondary);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5rem;
+  gap: 5rem;
+  position: relative;
+  z-index: 999;
+  box-shadow: var(--seperate-shadow);
+}
+
+.project-card {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--light);
+  padding: 1.5rem;
+  border-radius: 47px;
+  box-shadow: 10px 10px 40px #a2c0c6, -10px -10px 40px #f2ffff;
+}
+
+.project-card-title {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  transition: font-size 300ms ease-out;
+}
+
+.project-card-title::after {
+  content: "🔗";
+}
+
+.project-card-title:hover {
+  font-size: 1.3rem;
+}
+
+.project-card-title > a {
+  color: inherit;
+}
+
+.project-card-image {
+  max-width: 100%;
+}
+
+/* ABOUT */
+.about {
+  padding: 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  z-index: 988;
+  background: var(--light);
+  box-shadow: var(--seperate-shadow);
+}
+
+.about-image {
+  max-width: 300px;
+}
+
+.about-words {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.about-title {
+  font-size: 2rem;
+}
+
+.about-paragraph {
+  font-size: 1.15rem;
+}
+
+.about-paragraph > a {
+  text-decoration: underline;
+}
+
+/* CONTACT */
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.contact-title {
+  font-size: 2rem;
+  width: 90%;
+  text-align: right;
+}
+
+.contact-form > label {
+  margin-top: 1rem;
+}
+
+.contact-form fieldset {
+  border: none;
+}
+
+.name-area {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.name-area span {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contact-form input[type="text"],
+.contact-form textarea,
+.contact-form input[type="email"] {
+  padding: 0.8rem;
+  border: 1px solid var(--dark);
+  border-radius: 0.25rem;
+  resize: vertical;
+}
+
+.contact-form > textarea {
+  height: 4rem;
+  min-height: 4rem;
+}
+
+.contact-form-submit {
+  background: var(--primary);
+  color: var(--light);
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  width: 6rem;
+  transition: background 300ms ease-out;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.contact-form-submit:hover {
+  background: hsl(263, 90%, 60%);
+}
