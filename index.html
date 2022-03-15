@@ -10,11 +10,28 @@
   </head>
   <body>
     <header id="header">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="hamburger-icon"
+        width="30"
+        height="30"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="4" y1="6" x2="20" y2="6"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="18" x2="20" y2="18"></line>
+      </svg>
       <nav>
-        <div class="color-bar"></div>
+        <!-- <div class="color-bar"></div> -->
         <div class="nav-content">
           <h4><strong>Fin</strong>Harris</h4>
-          <ul>
+          <ul class="nav-list">
             <li class="nav-item"><a href="#projects">Projects</a></li>
             <li class="nav-item"><a href="#about">About</a></li>
             <li class="nav-item"><a href="#contact">Contact</a></li>
@@ -185,5 +202,6 @@
 
     <script src="./scripts/headerScroll.js"></script>
     <script src="./scripts/contactForm.js"></script>
+    <script src="./scripts/hamburgerMenu.js"></script>
   </body>
 </html>
