@@ -7,15 +7,7 @@ document.addEventListener("scroll", (e) => {
 
   if (scrollY > 5) {
     nav.classList.add("nav-scrolled");
-
-    for (const item of navItemAs) {
-      item.style.color = "var(--dark)";
-    }
   } else {
     nav.classList.remove("nav-scrolled");
-
-    for (const item of navItemAs) {
-      item.style.color = "var(--light)";
-    }
   }
 });

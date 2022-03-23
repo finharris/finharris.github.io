@@ -45,50 +45,20 @@ nav {
   top: 0;
   right: 0;
   left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.8rem 1.5rem;
   transition: 500ms ease-out;
 }
 
-.hide-nav {
-  transform: translateX(0px);
-}
-
 .hamburger-icon {
+  display: block;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
   display: none;
-}
-
-@media only screen and (max-width: 600px) {
-  .hamburger-icon {
-    position: absolute;
-    display: block;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 1000;
-  }
-
-  nav {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-  }
-
-  .nav-content {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-
-  .hide-nav {
-    transform: translateX(100%);
-  }
-
-  .nav-list {
-    display: flex;
-    flex-direction: column !important;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-  }
 }
 
 nav a {
@@ -101,17 +71,17 @@ nav a {
   color: var(--dark);
 }
 
-.nav-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0.8rem 1.5rem;
+.nav-scrolled a {
+  color: var(--dark);
 }
 
-.nav-content h4 {
+.name-title {
   font-size: 1.75rem;
   font-weight: normal;
+}
+
+.t2 {
+  display: none;
 }
 
 .nav-list {
@@ -143,20 +113,6 @@ nav a {
 .hero-location {
   display: flex;
   gap: 5px;
-}
-
-@media only screen and (max-width: 700px) {
-  .hero h1 {
-    font-size: 1.2rem;
-  }
-
-  .hero-location h2 {
-    font-size: 1rem;
-  }
-
-  .hero-location svg {
-    width: 1rem;
-  }
 }
 
 /* PROJECTS */
@@ -219,6 +175,7 @@ nav a {
 
 .about-image {
   max-width: 300px;
+  border-radius: 1rem;
 }
 
 .about-words {
@@ -272,7 +229,6 @@ nav a {
 
 .name-area {
   display: flex;
-  width: 100%;
   gap: 2rem;
 }
 
@@ -311,4 +267,119 @@ nav a {
 
 .contact-form-submit:hover {
   background: hsl(263, 90%, 60%);
+}
+
+@media only screen and (max-width: 700px) {
+  /* NAV AND HAMBURGER */
+  nav {
+    inset: 0;
+    background: rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    clip-path: circle(0% at 95% 5%);
+  }
+
+  .t1 {
+    display: none;
+  }
+
+  .t2 {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav-shown {
+    clip-path: circle(150% at 95% 5%);
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .nav-scrolled {
+    color: var(--light);
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .nav-scrolled a {
+    color: var(--light);
+  }
+
+  .hamburger-icon {
+    z-index: 1000;
+    display: block;
+  }
+
+  /* HERO SECTION */
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-location h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-location svg {
+    width: 1.2rem;
+  }
+
+  /* ABOUT SECTION */
+  .about {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .about-words {
+    width: 90%;
+  }
+
+  /* CONTACT SECTION */
+}
+
+@media only screen and (max-width: 620px) {
+  .name-area {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+
+  .hero-location h2 {
+    font-size: 1rem;
+  }
+
+  .hero-location svg {
+    width: 1rem;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+
+  .hero-location h2 {
+    font-size: 0.9rem;
+  }
+
+  .hero-location svg {
+    width: 1rem;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .hero {
+    text-align: center;
+  }
 }
