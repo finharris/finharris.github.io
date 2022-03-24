@@ -130,7 +130,7 @@ nav a {
 }
 
 .project-card {
-  max-width: 300px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -171,6 +171,7 @@ nav a {
   z-index: 988;
   background: var(--light);
   box-shadow: var(--seperate-shadow);
+  gap: 2rem;
 }
 
 .about-image {
@@ -334,16 +335,20 @@ nav a {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    padding: 4rem 0rem;
   }
 
   .about-words {
-    width: 90%;
+    width: 85%;
   }
-
-  /* CONTACT SECTION */
 }
 
 @media only screen and (max-width: 620px) {
+  /* CONTACT SECTION */
+  .contact {
+    padding: 4rem 0rem;
+  }
+
   .name-area {
     flex-direction: column;
     gap: 1rem;
@@ -351,30 +356,20 @@ nav a {
 }
 
 @media only screen and (max-width: 570px) {
-  .hero h1 {
-    font-size: 1.3rem;
-  }
-
-  .hero-location h2 {
-    font-size: 1rem;
-  }
-
-  .hero-location svg {
-    width: 1rem;
+  .hero {
+    padding: 0rem 1rem;
   }
 }
 
-@media only screen and (max-width: 460px) {
-  .hero h1 {
-    font-size: 1.2rem;
+@media only screen and (max-width: 480px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0rem;
   }
 
-  .hero-location h2 {
-    font-size: 0.9rem;
-  }
-
-  .hero-location svg {
-    width: 1rem;
+  .project-card {
+    width: 85%;
   }
 }
 
