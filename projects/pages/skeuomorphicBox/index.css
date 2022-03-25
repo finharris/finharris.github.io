@@ -4,6 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   background: lightgray;
+  overflow: hidden;
 }
 
 .button {
