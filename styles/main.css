@@ -57,6 +57,9 @@ nav {
   top: 1rem;
   right: 1rem;
   display: none;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%);
+  padding: 0.2rem;
+  border-radius: 50%;
 }
 
 nav a {
@@ -127,6 +130,15 @@ nav a {
   box-shadow: var(--seperate-shadow);
 }
 
+.project-card:first-of-type {
+  background-color: rgb(255, 243, 167);
+  font-weight: 600;
+}
+
+.project-card:first-of-type::before {
+  content: 'SPOTLIGHT';
+}
+
 .project-card {
   width: 300px;
   display: flex;
@@ -134,7 +146,7 @@ nav a {
   gap: 0.5rem;
   background: var(--light);
   padding: 1.5rem;
-  border-radius: 47px;
+  border-radius: 2rem;
   box-shadow: 10px 10px 40px #a2c0c6, -10px -10px 40px #f2ffff;
 }
 
@@ -142,6 +154,7 @@ nav a {
   font-size: 1.2rem;
   text-decoration: underline;
   transition: font-size 300ms ease-out;
+  padding: 0rem 0.3rem;
 }
 
 .project-card-title::after {
@@ -158,6 +171,12 @@ nav a {
 
 .project-card-image {
   max-width: 100%;
+  border-radius: 1rem;
+}
+
+.project-card-description {
+  font-size: 1.2rem;
+  padding: 0rem 0.2rem;
 }
 
 /* ABOUT */
