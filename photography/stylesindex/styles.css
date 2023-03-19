@@ -1,7 +1,7 @@
 .container {
   height: 100vh;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
+  -ms-scroll-snap-type: y;
+      scroll-snap-type: y;
   overflow-y: scroll;
 }
 
@@ -28,7 +28,7 @@
 .container section .image {
   max-height: 60vh;
   max-width: 80%;
-  border: 20px solid white;
+  border: calc(min(20px, 2vw)) solid white;
   -webkit-box-shadow: 0px 4px 25px 4px #000000;
           box-shadow: 0px 4px 25px 4px #000000;
   cursor: pointer;
@@ -61,7 +61,7 @@
 
 .scroll-down {
   position: absolute;
-  bottom: 3rem;
+  bottom: -10px;
   width: 5rem;
   opacity: 0.2;
   left: calc(50% - 2.5rem);
