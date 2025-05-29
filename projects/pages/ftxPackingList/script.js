@@ -167,9 +167,11 @@ function updateProgress() {
   const all = document.querySelectorAll("input[type='checkbox']");
   const checked = Array.from(all).filter((cb) => cb.checked).length;
   const percent = Math.round((checked / all.length) * 100);
-  document.getElementById(
-    "progressTracker"
-  ).textContent = `${percent}% complete`;
+  const progressTracker = document.getElementById("progressTracker");
+  const progressTrackerText = document.getElementById("progressTrackerText");
+
+  progressTrackerText.textContent = `${percent}% complete`;
+  progressTracker.style.background = `linear-gradient(90deg, #003f30 ${percent}%, #ffffff00 0%)`;
 }
 
 renderChecklist();
