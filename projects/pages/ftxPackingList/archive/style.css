@@ -1,0 +1,67 @@
+@import url("https://fonts.cdnfonts.com/css/neo-sans-pro");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  font-family: "Neo Sans Pro", sans-serif;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+}
+
+#title {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+#title-first-word {
+  color: #003f30;
+  font-weight: bolder;
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+.side {
+  width: 100%;
+  padding-left: 1rem;
+}
+
+#left {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#check-list {
+  margin-top: 1rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#right {
+  height: 100vh;
+}
+
+#issued {
+  display: flex;
+  flex-direction: column;
+}
+
+#issued > p {
+  margin-top: 1rem;
+}
+
+#issued > ul {
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+}
