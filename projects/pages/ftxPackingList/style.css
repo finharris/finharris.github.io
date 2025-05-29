@@ -1,5 +1,7 @@
+@import url("https://fonts.cdnfonts.com/css/neo-sans-pro");
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Neo Sans Pro", sans-serif;
   margin: 20px;
   background-color: #f4f4f4;
 }
@@ -30,7 +32,12 @@ li {
 .progress {
   font-weight: bold;
   margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  background: linear-gradient(90deg, #003f30 0%, #ffffff00 0%);
+  padding: 0.5rem;
 }
+
 button {
   margin-top: 20px;
   padding: 10px 20px;
