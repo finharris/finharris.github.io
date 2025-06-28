@@ -1,3 +1,30 @@
+.enlarge-popup {
+  // display: none;
+  opacity: 100%;
+  background-color: rgba($color: #fff, $alpha: 0.1);
+  position: absolute;
+  width: 100%;
+  z-index: 1001;
+
+  .enlarge-popup-close {
+    position: absolute;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  h3 {
+    padding: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+.enlarge-popup-invisible {
+  opacity: 0%;
+
+  transition: opacity 200ms ease-in;
+}
+
 .container {
   height: 100vh;
   scroll-snap-type: y;

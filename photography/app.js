@@ -1,8 +1,40 @@
-// IMAHE ENLARGING
+// IMAGE ENLARGING REMINDER
+const enlargePopup = document.getElementById("enlarge-popup");
+const enlargePopupClose = document.getElementById("enlarge-popup-close");
+
+let imageEnlarged;
+
+function setImageEnlarged() {
+  imageEnlarged = true;
+  localStorage.setItem("enlarge-popup", true);
+  checkImageEnlarged();
+}
+
+function checkImageEnlarged() {
+  imageEnlarged =
+    localStorage.getItem("enlarge-popup") == "true" ? true : false;
+
+  if (!imageEnlarged) {
+    // enlargePopup.style.display = "block";
+    enlargePopup.classList.toggle("enlarge-popup-invisible");
+  } else {
+    // enlargePopup.style.display = "none";
+    enlargePopup.classList.toggle("enlarge-popup-invisible");
+  }
+}
+checkImageEnlarged();
+
+enlargePopupClose.addEventListener("click", () => {
+  setImageEnlarged();
+});
+
+// IMAGE ENLARGING
 const images = document.querySelectorAll(".resizable-image");
 
 for (const image of images) {
   image.addEventListener("click", (e) => {
+    setImageEnlarged();
+
     if (e.target.width <= 0.75 * window.innerWidth) {
       e.target.parentNode.scrollIntoView({
         block: "center",
@@ -40,7 +72,6 @@ scrollDownIcon.addEventListener("click", (e) => {
     left: 0,
     top: window.innerHeight,
   });
-  console.log(window.innerHeight);
 });
 
 // BACK TO TOP
@@ -52,6 +83,4 @@ backToTop.addEventListener("click", (e) => {
     left: 0,
     top: 0,
   });
-
-  console.log("test");
 });

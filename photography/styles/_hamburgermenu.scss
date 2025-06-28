@@ -2,7 +2,7 @@
   position: absolute;
   right: 2rem;
   top: 2rem;
-  z-index: 1000;
+  z-index: 1002;
 
   .open {
     // font-size: 3rem;
@@ -14,7 +14,7 @@
   }
 
   .open::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 10px;
     width: 100%;
@@ -24,7 +24,7 @@
   }
 
   .open::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 20px;
     width: 100%;
@@ -58,7 +58,7 @@
     }
 
     .close::after {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 5px;

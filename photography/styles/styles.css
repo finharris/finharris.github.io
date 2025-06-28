@@ -48,7 +48,7 @@
   position: absolute;
   right: 2rem;
   top: 2rem;
-  z-index: 1000;
+  z-index: 1002;
 }
 .header-sect .open {
   background-color: rgb(233, 233, 233);
@@ -138,6 +138,7 @@
   color: rgb(233, 233, 233);
   background: rgb(20, 25, 29);
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 * {

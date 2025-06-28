@@ -1,0 +1,14 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h4 a {
+  text-decoration: underline;
+}/*# sourceMappingURL=styles.css.map */
