@@ -11,11 +11,11 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #14191d;
+  background: rgb(20, 25, 29);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #e9e9e9;
+  background-color: rgb(233, 233, 233);
   border-radius: 10px;
   border: 3px none #ffffff;
 }
@@ -23,9 +23,8 @@
 .animated-underline {
   position: relative;
 }
-
 .animated-underline::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -33,16 +32,12 @@
   left: 0;
   background-color: #fff;
   visibility: hidden;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out;
+  transform: scaleX(0);
   transition: all 0.3s ease-in-out;
 }
-
 .animated-underline:hover::before {
   visibility: visible;
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .enlarge-image {
@@ -55,110 +50,81 @@
   top: 2rem;
   z-index: 1000;
 }
-
 .header-sect .open {
-  background-color: #e9e9e9;
+  background-color: rgb(233, 233, 233);
   width: 2.5rem;
   height: 5px;
   cursor: pointer;
   position: relative;
 }
-
 .header-sect .open::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 10px;
   width: 100%;
   margin-bottom: 5px;
   height: 5px;
-  background-color: #e9e9e9;
+  background-color: rgb(233, 233, 233);
 }
-
 .header-sect .open::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 20px;
   width: 100%;
   margin-bottom: 5px;
   height: 5px;
-  background-color: #e9e9e9;
+  background-color: rgb(233, 233, 233);
 }
-
 .header-sect .ham-menu {
   z-index: 1000;
   position: fixed;
   inset: 0;
   height: 100vh;
   width: 100%;
-  background-color: #0d1013;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: rgb(13, 16, 19);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   -webkit-clip-path: circle(0% at 100% 0%);
           clip-path: circle(0% at 100% 0%);
-  -webkit-transition: -webkit-clip-path 0.5s ease-out;
   transition: -webkit-clip-path 0.5s ease-out;
   transition: clip-path 0.5s ease-out;
   transition: clip-path 0.5s ease-out, -webkit-clip-path 0.5s ease-out;
 }
-
 .header-sect .ham-menu .close {
   position: absolute;
   right: 2rem;
   top: 2.7rem;
-  background-color: #e9e9e9;
+  background-color: rgb(233, 233, 233);
   width: 2.5rem;
   height: 5px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   cursor: pointer;
 }
-
 .header-sect .ham-menu .close::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 5px;
-  background-color: #e9e9e9;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  background-color: rgb(233, 233, 233);
+  transform: rotate(-90deg);
 }
-
 .header-sect .ham-menu ul {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   height: 60%;
 }
-
 .header-sect .ham-menu ul li {
   font-size: 1.5rem;
   cursor: pointer;
   text-transform: uppercase;
-  -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-
 .header-sect .ham-menu ul li:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
   font-weight: 700;
 }
 
@@ -168,18 +134,16 @@
 }
 
 :root {
-  font-family: 'Open Sans', sans-serif;
-  color: #e9e9e9;
-  background: #14191d;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(233, 233, 233);
+  background: rgb(20, 25, 29);
   overflow-x: hidden;
 }
 
 * {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
   padding: 0;
   margin: 0;
-  color: #e9e9e9;
+  color: rgb(233, 233, 233);
   text-decoration: none;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
