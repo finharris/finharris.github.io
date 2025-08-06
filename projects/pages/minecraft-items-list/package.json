@@ -1,0 +1,40 @@
+{
+  "name": "minecraft-items-list-app",
+  "version": "1.0.0",
+  "description": "An application that allows users to add Minecraft items to a list and convert large numbers of items into stacks and individual items.",
+  "main": "src/App.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "minecraft",
+    "items",
+    "list",
+    "stack",
+    "converter"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^5.0.1"
+  },
+  "comment_homepage": "http://yourusername.github.io/minecraft-items-list-app",
+  "homepage": ".",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
