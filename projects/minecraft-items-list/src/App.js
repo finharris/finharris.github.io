@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from "react";
 import ItemForm from "./components/ItemForm";
 import ItemList from "./components/ItemList";
+import HeaderBar from "./components/HeaderBar";
 
 const STORAGE_KEY = "minecraft_items_list";
 
 const App = () => {
   const [items, setItems] = useState([]);
+  let darkMode = null;
 
   // Load items from localStorage on mount
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       setItems(JSON.parse(stored));
+    }
+
+    darkMode = localStorage.getItem("darkMode");
+    if (darkMode == "enabled") {
+      enableDarkMode();
     }
   }, []);
 
@@ -47,9 +54,29 @@ const App = () => {
     }
   };
 
+  const enableDarkMode = () => {
+    document.body.classList.add("darkmode");
+    localStorage.setItem("darkMode", "enabled");
+  };
+
+  const disableDarkMode = () => {
+    document.body.classList.remove("darkmode");
+    localStorage.setItem("darkMode", null);
+  };
+
+  const handleDarkModeClick = () => {
+    darkMode = localStorage.getItem("darkMode");
+
+    if (darkMode !== "enabled") {
+      enableDarkMode();
+    } else {
+      disableDarkMode();
+    }
+  };
+
   return (
     <div>
-      <h1>Minecraft Items List</h1>
+      <HeaderBar handleDarkModeClick={handleDarkModeClick} />
       <ItemForm addItem={addItem} />
       <ItemList
         items={items}
