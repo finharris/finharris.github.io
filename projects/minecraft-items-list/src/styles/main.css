@@ -4,6 +4,7 @@
   --clr-accent-dark: hsl(0, 0%, 85%);
   --clr-accent-light: hsl(216, 18%, 50%);
   --green: #28a745;
+  --amber: #ffd12a;
   --red: rgb(210, 51, 51);
 
   --foreground: var(--clr-dark);
@@ -74,6 +75,25 @@ form {
   transition: background-color 100ms ease-in;
 }
 
+select {
+  /* A reset of styles, including removing the default dropdown arrow */
+  /* appearance: none; */
+  /* Additional resets for further consistency */
+  background-color: var(--clr-accent-dark);
+  color: var(--foreground);
+  border: none;
+  padding: 0.3rem 0.75rem;
+  margin: 0;
+  border-radius: 0.4rem;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+
+  transition: background-color 100ms ease-in;
+  transition: color 100ms ease-in;
+}
+
 .add-item-button :hover {
   background-color: #218838;
 }
@@ -81,16 +101,32 @@ form {
 .item-list-container {
   padding: 0;
 
+  span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   h2 {
     font-weight: 600;
   }
 
-  .clear-list-button {
-    background-color: var(--red);
-    display: block;
+  .action-buttons {
+    display: flex;
+    gap: 0.75rem;
 
-    &:hover {
-      background-color: rgb(181, 44, 44);
+    .clear-list-button {
+      background-color: var(--red);
+      display: block;
+
+      &:hover {
+        background-color: rgb(181, 44, 44);
+      }
+    }
+
+    .uncollect-all-button {
+      background-color: var(--amber);
+      color: black;
     }
   }
 }
