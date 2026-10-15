@@ -33,7 +33,7 @@ const App = () => {
 
   const markCollected = (idx) => {
     const updated = items.map((item, i) =>
-      i === idx ? { ...item, collected: !item.collected } : item
+      i === idx ? { ...item, collected: !item.collected } : item,
     );
     setItems(updated);
   };
@@ -44,13 +44,24 @@ const App = () => {
 
   const clearList = () => {
     const response = window.confirm(
-      "WARN: Clearing the list is permanent and irreversable\n\nAre you sure you want to continue?"
+      "WARN: Clearing the list is permanent and irreversable\n\nAre you sure you want to continue?",
     );
     if (response) {
       localStorage.setItem(STORAGE_KEY, "{}");
       setItems([]);
     } else {
       console.log(response, "User cancelled clearing list.");
+    }
+  };
+
+  const uncollectAll = () => {
+    const response = window.confirm(
+      "WARN: Marking all as uncollected is permanent and irreversable\n\nAre you sure you want to continue?",
+    );
+    if (response) {
+      setItems((currentItems) => currentItems.map((item) => ({ ...item, collected: false })));
+    } else {
+      console.log(response, "User cancelled marking all as uncollected.");
     }
   };
 
@@ -81,6 +92,7 @@ const App = () => {
       <ItemList
         items={items}
         markCollected={markCollected}
+        uncollectAll={uncollectAll}
         deleteItem={deleteItem}
         clearList={clearList}
       />
