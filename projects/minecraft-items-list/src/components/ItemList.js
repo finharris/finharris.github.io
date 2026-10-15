@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { convertToStacks } from "../utils/converter";
+import { sortList } from "../utils/SortList";
 
-const ItemList = ({ items, markCollected, deleteItem, clearList }) => {
-  // Sort: uncollected by quantity desc, collected at bottom
-  const sorted = [...items].sort((a, b) => {
-    if (a.collected === b.collected) {
-      return b.quantity - a.quantity;
-    }
-    return a.collected ? 1 : -1;
-  });
+const ItemList = ({ items, markCollected, deleteItem, clearList, uncollectAll }) => {
+  const [sortMode, setSortMode] = useState("quantity-htl");
+
+  const sorted = sortList(items, sortMode);
 
   // Calculate percentage of collected items
   const total = items.length;
@@ -17,7 +14,21 @@ const ItemList = ({ items, markCollected, deleteItem, clearList }) => {
 
   return (
     <div className='item-list-container'>
-      <h2>Required items - {total}</h2>
+      <span className='list-header'>
+        <h2>Required items - {total}</h2>
+
+        <select
+          name='sort-mode'
+          id='sort-more'
+          value={sortMode}
+          onChange={(e) => setSortMode(e.target.value)}>
+          <option value='quantity-htl'>Quantity (High to Low)</option>
+          <option value='quantity-lth'>Quantity (Low to High)</option>
+
+          <option value='name-atz'>Name (A to Z)</option>
+          <option value='name-zta'>Name (Z to A)</option>
+        </select>
+      </span>
       <ul className='item-list'>
         {sorted.map((item, idx) => {
           const { stacks, remainder } = convertToStacks(item.quantity);
@@ -35,6 +46,7 @@ const ItemList = ({ items, markCollected, deleteItem, clearList }) => {
               )}
               {remainder > 0 && (
                 <>
+                  {" "}
                   {remainder} {remainder === 1 ? "Item" : "Items"}
                 </>
               )}
@@ -57,9 +69,15 @@ const ItemList = ({ items, markCollected, deleteItem, clearList }) => {
         value={percentCollected}
         max={100}
         data-percent={percentCollected}></progress>
-      <button className='button clear-list-button' onClick={clearList}>
-        Clear list
-      </button>
+
+      <div className='action-buttons'>
+        <button className='button clear-list-button' onClick={clearList}>
+          Clear list
+        </button>
+        <button className='button uncollect-all-button' onClick={uncollectAll}>
+          Mark all uncollected
+        </button>
+      </div>
     </div>
   );
 };
