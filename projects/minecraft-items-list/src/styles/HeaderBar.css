@@ -1,3 +1,12 @@
 .header-bar h1 {
   font-weight: 700;
 }
+
+.import-button.is-dragging {
+  outline: 2px dashed currentColor;
+  outline-offset: 2px;
+}
+
+.import-file-input {
+  display: none;
+}

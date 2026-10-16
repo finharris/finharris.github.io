@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ItemForm from "./components/ItemForm";
 import ItemList from "./components/ItemList";
 import HeaderBar from "./components/HeaderBar";
+import { parseMinecraftItems } from "./utils/importMinecraftItems";
 
 const STORAGE_KEY = "minecraft_items_list";
 
@@ -40,6 +41,20 @@ const App = () => {
 
   const deleteItem = (idx) => {
     setItems(items.filter((_, i) => i !== idx));
+  };
+
+  const handleImportFile = async (file) => {
+    if (!file.name.toLowerCase().endsWith(".json")) {
+      window.alert("Please choose a .json file.");
+      return;
+    }
+
+    try {
+      const importedItems = parseMinecraftItems(JSON.parse(await file.text()));
+      setItems(importedItems);
+    } catch (error) {
+      window.alert(`Unable to import JSON file: ${error.message}`);
+    }
   };
 
   const clearList = () => {
@@ -87,7 +102,7 @@ const App = () => {
 
   return (
     <div>
-      <HeaderBar handleDarkModeClick={handleDarkModeClick} />
+      <HeaderBar handleDarkModeClick={handleDarkModeClick} handleImportFile={handleImportFile} />
       <ItemForm addItem={addItem} />
       <ItemList
         items={items}

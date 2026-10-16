@@ -29,13 +29,12 @@ body {
 
 .header-bar {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dark-mode-toggle {
-  position: absolute;
-  z-index: 100;
-  top: 1em;
-  right: 1em;
   background: transparent;
   border: 2px solid var(--foreground);
   padding: 4px;
@@ -43,6 +42,27 @@ body {
   border-radius: 5px;
   width: 30px;
   height: 30px;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.import-button {
+  height: 30px;
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--clr-accent-light);
+  border-radius: 0.35rem;
+
+  transition: box-shadow 100ms ease-in;
+}
+
+.import-button:hover {
+  box-shadow: 5px 5px 15px -3px rgba(0, 0, 0, 0.5);
+  text-decoration: underline;
 }
 
 form {
